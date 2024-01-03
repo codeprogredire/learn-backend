@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--fetch api is used to get data from backend of another server-->
+    <script>
+        //use of promise concept here
+        function getAnimalData(){
+            fetch('https://fakerapi.it/api/v1/persons')
+            .then(function(response){
+                response.json()
+                .then(function(finalData){
+                    console.log(finalData)
+                })
+            })
+            
+        }
+
+        async function getanimaldata(){
+            const responce=await fetch('https://fakerapi.it/api/v1/persons')
+            const finalData=await response.json()
+            console.log(finalData)
+        }
+    </script>
+    <button onclick="getAnimalData()">Get animal data</button>
+</body>
+</html>
